@@ -1,0 +1,8 @@
+{
+  "execPath": "C:/Users/Amir/.platformio/packages/toolchain-atmelavr/bin/avr-g++.exe",
+  "gccDefaultCFlags": "-fsyntax-only -std=gnu11 -fno-fat-lto-objects -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -DPLATFORMIO=30604 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10805 -D__AVR_ATmega328P__",
+  "gccDefaultCppFlags": "-fsyntax-only -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -DPLATFORMIO=30604 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10805 -D__AVR_ATmega328P__",
+  "gccErrorLimit": 15,
+  "gccIncludePaths": "C:/Users/Amir/.platformio/packages/framework-arduinoavr/cores/arduino,C:/Users/Amir/.platformio/packages/framework-arduinoavr/variants/standard,C:/Users/Amir/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/EEPROM/src,C:/Users/Amir/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/HID/src,C:/Users/Amir/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SPI/src,C:/Users/Amir/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/SoftwareSerial/src,C:/Users/Amir/.platformio/packages/framework-arduinoavr/libraries/__cores__/arduino/Wire/src,C:/Users/Amir/.platformio/packages/toolchain-atmelavr/avr/include,C:/Users/Amir/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/5.4.0/include,C:/Users/Amir/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/5.4.0/include-fixed,C:/Users/Amir/.platformio/packages/tool-unity,D:/Users/mohammad/Desktop/mohammad/arduino/main_board/include,D:/Users/mohammad/Desktop/mohammad/arduino/main_board/src",
+  "gccSuppressWarnings": false
+}
