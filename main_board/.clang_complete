@@ -1,10 +1,12 @@
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\cores\arduino
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\variants\standard
+-ID:\Users\mohammad\Desktop\mohammad\arduino\main_board\.piolibdeps\LiquidCrystal_ID136
+-IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\Wire\src
+-IC:\Users\Amir\.platformio\lib\LiquidCrystal_ID136
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\EEPROM\src
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\HID\src
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\SPI\src
 -IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\SoftwareSerial\src
--IC:\Users\Amir\.platformio\packages\framework-arduinoavr\libraries\__cores__\arduino\Wire\src
 -IC:\Users\Amir\.platformio\packages\toolchain-atmelavr\avr\include
 -IC:\Users\Amir\.platformio\packages\toolchain-atmelavr\lib\gcc\avr\5.4.0\include
 -IC:\Users\Amir\.platformio\packages\toolchain-atmelavr\lib\gcc\avr\5.4.0\include-fixed
