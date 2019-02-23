@@ -1,0 +1,41 @@
+[33mcommit 14f86d3d1d4b2701b7dd45e5556777fc3393002b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Sat Feb 23 00:03:34 2019 +0330
+
+    Sensors connected to the sensor board.
+
+[33mcommit 1d1efb1b8dc83b1ea2f355783ca48b3363b6bea0[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Fri Feb 22 21:59:02 2019 +0330
+
+    LCD connected
+
+[33mcommit 50dea55e436219b010e4ac63734d2cc43581f331[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Fri Feb 22 19:52:36 2019 +0330
+
+    bluetooth sending and recieving is OK
+
+[33mcommit 6553ffe91feca017f3d13306e3877ba7ddfff4c7[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Fri Feb 22 03:55:38 2019 +0330
+
+    x and y in UT sensor is generated
+
+[33mcommit 755eb87f74e04c668040ea9cc6422beae8ccc594[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Thu Feb 21 03:07:29 2019 +0330
+
+    files updated
+
+[33mcommit 675cdc99d42912fb1d4f2a531050479a7e6d7439[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Wed Feb 20 21:19:17 2019 +0330
+
+    all of the modules created
+
+[33mcommit 4e9ca1c05c57177d2f9d428b364ac99a45698632[m
+Author: mohammad <mohjam77@gmail.com>
+Date:   Wed Feb 20 21:16:15 2019 +0330
+
+    first commit

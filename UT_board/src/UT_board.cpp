@@ -15,6 +15,7 @@
 uint8_t UT_address = 110;
 
 byte x0, x1, x2, x3, y0, y1, y2, y3;
+String inData;
 
 SoftwareSerial myserial(2,3);
 
@@ -71,11 +72,14 @@ void loop(){
     temp_y.b[2] = y1;
     temp_y.b[3] = y0;
 
-    myserial.print("I sent: ");
-    myserial.println(x0);
-    Serial.write(x0);
-    //Serial.println(temp_y.f);
+    inData = String(temp_x.f);
+    inData += '\0';
+    char chr[6];
+    inData.toCharArray(chr, inData.length());
 
+    Serial.print(chr);
+    myserial.print(inData);
+    myserial.println("\n");
 
     delay(100);
 

@@ -8,6 +8,8 @@
 LM35 temp(A0);
 Ultrasonic ultrasonic(TRIG_PIN, ECHO_PIN);
 
+String inData ;
+
 void setup()
 {
     Serial.begin(9600);
@@ -15,10 +17,10 @@ void setup()
 
 void loop()
 {
-    // Serial.print(temp.cel());
-    // Serial.print(" ");
-    Serial.print(ultrasonic.Ranging(CM));
-    Serial.print(" ");
-
-    delay(1000);
+    inData = String(temp.cel());
+    inData += 'M';
+    inData += String(ultrasonic.Ranging(CM));
+    inData += '\0';
+    Serial.print(inData);
+    //delay(300);
 }
