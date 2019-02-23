@@ -1,11 +1,20 @@
 #include <arduino.h>
 #include <LiquidCrystal.h>
 #include <SoftwareSerial.h>
+#include <AltSoftSerial.h>
 
-SoftwareSerial myserial(2,3);
+AltSoftSerial myserial;
 LiquidCrystal lcd(12, 11, 10, 7, 6, 5, 4);
 
 String incomingString, incomingString2;
+
+union TEMP
+{
+  float f;
+  byte b[4];
+};
+
+TEMP float_in;
 
 void setup(){
     Serial.begin(9600);
@@ -30,14 +39,8 @@ void loop(){
         }
     }
     if(myserial.available()){
-        char incomingByte2 = (char)myserial.read();
-        if (incomingByte2 == '\0'){
-            lcd.setCursor(0, 0);
-            lcd.print("hello");
-            incomingString2 = "";
-        }
-        else{
-            incomingString2 += incomingByte2;
-        }
+        myserial.readBytes(float_in.b, 4);
+        lcd.setCursor(0, 0);
+        lcd.print(float_in.f);
     }
 }

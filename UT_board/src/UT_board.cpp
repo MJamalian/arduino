@@ -13,7 +13,6 @@
 #define power_reg 0x0
 
 uint8_t UT_address = 110;
-
 byte x0, x1, x2, x3, y0, y1, y2, y3;
 String inData;
 
@@ -35,7 +34,7 @@ union TEMP
   byte b[4];
 };
 
-
+TEMP sigma;
 
 void setup(){
     Serial.begin(9600);
@@ -46,6 +45,7 @@ void setup(){
     Wire.write(power_reg);
     Wire.write(1);
     Wire.endTransmission();
+    sigma.f = 0;
 }
 
 void loop(){
@@ -53,33 +53,30 @@ void loop(){
     TEMP temp_x;
     TEMP temp_y;
 
-    x3 = i2c_readRegisterByte(UT_address, X0_address);
-    x2 = i2c_readRegisterByte(UT_address, X1_address);
-    x1 = i2c_readRegisterByte(UT_address, X2_address);
-    x0 = i2c_readRegisterByte(UT_address, X3_address);
-    y3 = i2c_readRegisterByte(UT_address, Y0_address);
-    y2 = i2c_readRegisterByte(UT_address, Y1_address);
-    y1 = i2c_readRegisterByte(UT_address, Y2_address);
-    y0 = i2c_readRegisterByte(UT_address, Y3_address);
 
-    temp_x.b[0] = x3;
-    temp_x.b[1] = x2;
-    temp_x.b[2] = x1;
-    temp_x.b[3] = x0;
-
-    temp_y.b[0] = y3;
-    temp_y.b[1] = y2;
-    temp_y.b[2] = y1;
-    temp_y.b[3] = y0;
-
-    inData = String(temp_x.f);
-    inData += '\0';
-    char chr[6];
-    inData.toCharArray(chr, inData.length());
-
-    Serial.print(chr);
-    myserial.print(inData);
-    myserial.println("\n");
+    temp_x.b[0] = i2c_readRegisterByte(UT_address, X0_address);
+    temp_x.b[1] = i2c_readRegisterByte(UT_address, X1_address);
+    temp_x.b[2] = i2c_readRegisterByte(UT_address, X2_address);
+    temp_x.b[3] = i2c_readRegisterByte(UT_address, X3_address);
+    temp_y.b[0] = i2c_readRegisterByte(UT_address, Y0_address);
+    temp_y.b[1] = i2c_readRegisterByte(UT_address, Y1_address);
+    temp_y.b[2] = i2c_readRegisterByte(UT_address, Y2_address);
+    temp_y.b[3] = i2c_readRegisterByte(UT_address, Y3_address);
+    sigma.f += temp_x.f * temp_x.f + temp_y.f * temp_y.f ;
+    for (size_t i = 0; i < 4; i++) {
+        Serial.write(sigma.b[i]);
+    }
+    myserial.println(sigma.f);
+    myserial.print("\n");
+    //Serial.write(temp_x.b[0]);
+    // inData = String(temp_x.f);
+    // inData += '\0';
+    // char chr[6];
+    // inData.toCharArray(chr, inData.length());
+    // Serial.write(chr);
+    // Serial.print(chr);
+    // myserial.print(inData);
+    // myserial.println("\n");
 
     delay(100);
 
