@@ -1,6 +1,5 @@
 #include <arduino.h>
 #include <wire.h>
-#include <SoftwareSerial.h>
 
 #define X0_address 0xa
 #define X1_address 0xb
@@ -15,8 +14,6 @@
 uint8_t UT_address = 110;
 byte x0, x1, x2, x3, y0, y1, y2, y3;
 String inData;
-
-SoftwareSerial myserial(2,3);
 
 byte i2c_readRegisterByte (uint8_t deviceAddress, uint8_t registerAddress) {
     byte registerData;
@@ -38,7 +35,6 @@ TEMP sigma;
 
 void setup(){
     Serial.begin(9600);
-    myserial.begin(9600);
     Wire.begin();
     delay(100);
     Wire.beginTransmission(UT_address);
@@ -62,21 +58,12 @@ void loop(){
     temp_y.b[1] = i2c_readRegisterByte(UT_address, Y1_address);
     temp_y.b[2] = i2c_readRegisterByte(UT_address, Y2_address);
     temp_y.b[3] = i2c_readRegisterByte(UT_address, Y3_address);
+
     sigma.f += temp_x.f * temp_x.f + temp_y.f * temp_y.f ;
+
     for (size_t i = 0; i < 4; i++) {
         Serial.write(sigma.b[i]);
     }
-    myserial.println(sigma.f);
-    myserial.print("\n");
-    //Serial.write(temp_x.b[0]);
-    // inData = String(temp_x.f);
-    // inData += '\0';
-    // char chr[6];
-    // inData.toCharArray(chr, inData.length());
-    // Serial.write(chr);
-    // Serial.print(chr);
-    // myserial.print(inData);
-    // myserial.println("\n");
 
     delay(100);
 

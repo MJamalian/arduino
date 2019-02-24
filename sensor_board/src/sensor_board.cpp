@@ -22,5 +22,5 @@ void loop()
     inData += String(ultrasonic.Ranging(CM));
     inData += '\0';
     Serial.print(inData);
-    //delay(300);
+    
 }
